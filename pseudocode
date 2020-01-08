@@ -1,0 +1,54 @@
+              PSEUDOCODE: Voting System
+About:
+In this program, users will be asked to input the number of candidates running in the election as well as be asked to input 
+all the votes manually. The program will calculate all the votes and display the results in percentages accordingly. 
+It will also identify if there is a tie between the winning candidates or declare a winner.
+
+Get input from user:
+    Ask user for input of how many candidates are running in the election:
+    Accept input, using variable candidate as integer so that no other characters are allowed to be inputted.
+    Ask user to input vote 
+    If first input is 0, then program will quit and display “have a nice day!” in magenta by using color library
+    Otherwise, create a loop to continue asking user to input vote
+    If input is greater than variable candidate, value will not be stored in array, show error (displayed in red) and give 
+    user another chance to enter value again.
+    If input is not 0 and less than or equal to candidate number, store the valid votes in an array called total_votes
+    Loop will exit if input is 0, then program will quit and display results 
+
+
+Sort the votes:
+    Use sort function to sort the votes in ascending order
+
+
+Dictionary:
+    Create a dictionary to calculate and store the percentage of votes for each candidate
+    Iterate through all the votes entered in array total_votes
+    Calculate total number of votes for each candidate through use of Counter function (imported from collections)
+    Calculate percentages based on total number of votes for each candidate
+    Store the candidate and their percentage in the dictionary (d)
+
+
+To display results:
+    Use sort function to display results of each candidate in descending order from highest percentage to lowest.
+
+
+Checking for tie:
+    Create a function(checktie) to identify the tie between the two candidates
+    Create a new dictionary called reverse_dic
+    Iterate through the original dictionary(d), reverse the values (to find the matching percentages for the candidate) 
+    and store the candidates with the matching percentages in the new dictionary (reverse_dic)
+    Return reverse_dic 
+
+
+Find the winner:
+    Using max function find the winning candidate in the dictionary which is created by the checktie function.
+    Distinguish between winner or tie:
+    If there are two winning candidates;
+    Use the function length to find if there is more than 1 candidate with the same maximum value.
+    If it is greater than 1, display the candidates that have tied for the winning position and show winning percentage.
+    Otherwise there is one winning candidate:
+    Declare the winner of the election with percentage of winning votes  
+
+
+Finish:
+Program will display “Have a nice day” in green to show program has ended
